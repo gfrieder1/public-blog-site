@@ -15,7 +15,9 @@ const port = 5000;
 
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use(express.static("public"));
 
 app.listen(port, function() {
@@ -25,5 +27,23 @@ app.listen(port, function() {
 // '/'
 
 app.get("/", function(req, res) {
-  res.render("home");
+  res.render("home", {
+    content: homeStartingContent
+  });
+});
+
+// '/about'
+
+app.get("/about", function(req, res) {
+  res.render("about", {
+    content: aboutContent
+  });
+});
+
+// '/contact'
+
+app.get("/contact", function(req, res) {
+  res.render("contact", {
+    content: contactContent
+  });
 });
