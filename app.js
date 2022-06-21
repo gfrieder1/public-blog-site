@@ -63,7 +63,7 @@ app.post("/compose", function(req, res) {
     content: req.body.postContent
   }
 
-  // post the content to the home page
+  // add post to list
   posts.push(post);
 
   // take the user back to the home page
