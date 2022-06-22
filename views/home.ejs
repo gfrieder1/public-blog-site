@@ -2,7 +2,11 @@
 
 <% posts.forEach(function(post) { %>
   <h1><%= post.subject %></h1>
-  <p><%= post.content %></p>
+  <% if (post.content.length <= 100) { %>
+    <p><%= post.content %></p>
+  <% } else { %>
+    <p><%= post.content.substring(0,100) %>... <a href= "/posts/<%= post.subject %>">Read More</a></p>
+  <% } %>
 <% }); %>
 
 <%- include("partials/footer") -%>
