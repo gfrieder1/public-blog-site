@@ -69,3 +69,10 @@ app.post("/compose", function(req, res) {
   // take the user back to the home page
   res.redirect("/");
 });
+
+// '/posts/:postID'
+
+app.get("/posts/:postID", function(req, res) {
+  console.log(req.params.postID)
+  res.redirect("/");
+});
